@@ -9,8 +9,8 @@ import java.util.*;
 @SpringBootTest
 class HibdernetAndJpaApplicationTests {
 
-//	@Autowired
-//	ProdectRepo prodectRepo;
+	@Autowired
+	ProdectRepo prodectRepo;
 
 	@Test
 	void contextLoads() {
