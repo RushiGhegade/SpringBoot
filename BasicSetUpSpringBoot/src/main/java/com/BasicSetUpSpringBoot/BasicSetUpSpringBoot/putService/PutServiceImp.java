@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import javax.management.RuntimeErrorException;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -52,6 +53,19 @@ public class PutServiceImp implements PutService {
         putEntity get = putRepository.findById(id).orElseThrow (()-> new ResourceNotFoundException("Id Not Found "+id));
 
         return modelMapper.map(get,PutDTO.class);
+    }
+
+    @Override
+    public PutDTO updateUser(int id,PutDTO putDTO){
+
+        putEntity getUser = putRepository.findById(id).orElseThrow(()->new ResourceNotFoundException("User Not Found for these id "+id));
+
+        putDTO.setPutid(getUser.getPutid());
+
+        modelMapper.map(putDTO,getUser);
+
+        return modelMapper.map(putRepository.save(getUser),PutDTO.class);
+
     }
 
 

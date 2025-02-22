@@ -1,6 +1,7 @@
 package com.BasicSetUpSpringBoot.BasicSetUpSpringBoot.controller;
 
 import com.BasicSetUpSpringBoot.BasicSetUpSpringBoot.Dto.PutDTO;
+import com.BasicSetUpSpringBoot.BasicSetUpSpringBoot.Entity.putEntity;
 import com.BasicSetUpSpringBoot.BasicSetUpSpringBoot.putService.PutService;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -37,8 +38,13 @@ public class PutController {
 
     @GetMapping(path = "{id}")
     public PutDTO getUserById(@PathVariable int id){
-
         return putService.findUserById(id);
+    }
+
+    @PutMapping("/Update/{id}")
+    PutDTO updateUser(@PathVariable int id , @RequestBody PutDTO putDTO){
+
+        return putService.updateUser(id,putDTO);
 
     }
 

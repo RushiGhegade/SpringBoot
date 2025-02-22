@@ -16,4 +16,7 @@ public interface PutService {
     PutDTO createUser(PutDTO putDTO);
 
     PutDTO findUserById(int id);
+
+    PutDTO updateUser(int id,PutDTO putDTO);
+
 }

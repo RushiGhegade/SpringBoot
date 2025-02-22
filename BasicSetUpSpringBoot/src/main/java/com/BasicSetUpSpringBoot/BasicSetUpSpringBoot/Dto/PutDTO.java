@@ -1,19 +1,16 @@
 package com.BasicSetUpSpringBoot.BasicSetUpSpringBoot.Dto;
 
-import lombok.*;
-
-
 
 public class PutDTO {
 
-    private int id;
+    private int putid;
 
     private  String name;
 
     private  String description;
 
     public PutDTO(int id, String name, String description) {
-        this.id = id;
+        this.putid = id;
         this.name = name;
         this.description = description;
     }
@@ -21,12 +18,12 @@ public class PutDTO {
     public PutDTO() {
     }
 
-    public int getId() {
-        return id;
+    public int getPutid() {
+        return putid;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setPutid(int putid) {
+        this.putid = putid;
     }
 
     public String getName() {
